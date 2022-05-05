@@ -171,17 +171,20 @@ cl = is_closed(g)
 asso = is_associative(g)
 iden = identity_element(g)
 inve = closed_inverse_element(g)
-
-if cl and asso and iden is not False and inve:
-    print("En efecto, lo que usted ingresó es la tabla de multiplicación de un grupo")
-else:
-    print("Lo que ingresó no es la tabla de multiplicación de un grupo")
-
 conmutativo = is_conmutative(g)
-if conmutativo is True:
-    print("El grupo es conmutativo")
+if g != {}:
+    if cl and asso and iden is not False and inve:
+        print("En efecto, lo que usted ingresó es la tabla de multiplicación de un grupo")
+    else:
+        print("Lo que ingresó no es la tabla de multiplicación de un grupo")
+
+    if conmutativo is True:
+        print("El grupo es conmutativo")
+    else:
+        print("El grupo no es conmutativo")
 else:
-    print("El grupo no es conmutativo")
+    print("El grupo no debe ser vacío")
+
 
 print(f"el orden de {'0'} es {orden_element('0')}")
 
